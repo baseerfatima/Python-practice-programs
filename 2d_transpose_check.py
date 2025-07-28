@@ -1,0 +1,22 @@
+def check(mat):
+    rows=len(mat)
+    col=len(mat[0])
+    if rows!=col:
+        return False
+    for i in range(rows):
+        for j in range(col):
+            if mat[i][j] != mat[j][i]:
+                return False
+    return True
+
+
+r=int(input("enter the number of rows: "))
+c=int(input("enter the number of columns: "))
+mat=[]
+for i in range(r):
+    rows=[]
+    for j in range(c):
+        val=int(input(f"enter the value of {i+1} row and {j+1} column: "))
+        rows.append(val)
+    mat.append(rows)
+print(check(mat))
